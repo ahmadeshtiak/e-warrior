@@ -144,6 +144,7 @@ ini_set('display_errors', 1);
 <body>
     <!-- Header Section -->
     <header class="header">
+        <a href="index.html" class="site-btn btn-sm">Go Back</a>
         <div class="container">
             <a href="index.html" class="site-logo">
                 <img src="img/logo.png" alt="">

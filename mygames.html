@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center horizontally */
+        }
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+            grid-gap: 10px;
+            margin-top: 20px; /* Add some space above the grid */
+            width: 100%; /* Occupy full width of container */
+            max-width: 600px; /* Set a maximum width for larger screens */
+        }
+        button {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+            width: 100%; /* Make buttons fill grid cells */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #content-area {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>User Dashboard</h1>
+        
+        <div class="button-grid">
+            <button onclick="showContent('inbox')">Inbox</button>
+            <a href="reviews.php"><button>Add Review</button></a>
+            <a href="user_library.php"><button>My Library</button></a>
+            <a href="purchase.php"><button>Purchase a game</button></a>
+            <button onclick="showContent('settings')">Settings</button>
+            <a href="index.html"><button>Logout</button></a>
+        </div>
+
+        <div id="content-area">
+            <p>Welcome to your dashboard. Select an option above.</p>
+        </div>
+    </div>
+
+    <script>
+        function showContent(contentType) {
+            const contentArea = document.getElementById('content-area');
+            let content = "";
+
+            switch (contentType) {
+                case 'inbox':
+                    content = "<h2>Inbox</h2><p>You have no new messages.</p>";
+                    break;
+                case 'reviewGame':
+                    content = "<h2>Review Game</h2><p>Select a game to review.</p>";
+                    break;
+                case 'myLibrary':
+                    content = "<h2>My Library</h2><p>Your game library is empty.</p>";
+                    break;
+                case 'profile':
+                    content = "<h2>Profile</h2><p>User profile information.</p>";
+                    break;
+                case 'settings':
+                    content = "<h2>Settings</h2><p>User settings and preferences.</p>";
+                    break;
+                case 'logout':
+                    content = "<h2>Logout</h2><p>You have been logged out.</p>";
+                    //In a real app, you would perform the actual logout here
+                    break;
+                default:
+                    content = "<p>Invalid option.</p>";
+            }
+
+            contentArea.innerHTML = content;
+        }
+    </script>
+
+</body>
+</html>
