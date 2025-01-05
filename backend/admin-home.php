@@ -132,7 +132,7 @@
                 <h3>User Management</h3>
                 <div class="text-center">
                     <a href="../register.html" class="btn btn-success"><i class="fas fa-user-plus"></i> Add User</a>
-                    <a href="ban-user.html" class="btn btn-danger"><i class="fas fa-user-slash"></i> Ban User</a>
+                    <a href="#" class="btn btn-danger"><i class="fas fa-user-slash"></i> Ban User</a>
                 </div>
                 <h4 class="mt-4">All Users</h4>
                 <div class="table-responsive">
@@ -181,8 +181,8 @@
                 <h3>Game Management</h3>
                 <div class="text-center">
                     <a href="../add-game.html" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add Game</a>
-                    <a href="#" class="btn btn-warning"><i class="fas fa-minus-circle"></i> Remove
-                        Game</a>
+                    <a href="../show-games.php" class="btn btn-info"><i class="fas fa-chart-line"></i> Show Games</a>
+                    <a href="remove-game.php" class="btn btn-warning"><i class="fas fa-minus-circle"></i> Remove Game</a>
                 </div>
             </div>
         </div>
@@ -191,7 +191,6 @@
             <div class="col-md-10">
                 <h3>Other Actions</h3>
                 <div class="text-center">
-                    <a href="view-reports.html" class="btn btn-info"><i class="fas fa-chart-line"></i> View Reports</a>
                     <a href="../index.html" class="btn btn-secondary"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
             </div>
