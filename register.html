@@ -1,44 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="container">
-        <h2 class="text-center mt-5">User Registration</h2>
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-6">
-                <form action="backend/user-register.php" method="POST">
-                    <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input type="text" name="username" id="username" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="registerEmail">Email:</label>
-                        <input type="email" name="email" id="registerEmail" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="registerPassword">Password:</label>
-                        <input type="password" name="password" id="registerPassword" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmPassword">Confirm Password:</label>
-                        <input type="password" name="confirm_password" id="confirmPassword" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn btn-success">Register</button>
-                </form>
-                <div class="text-center mt-3">
-                    <p>Already have an account? <a href="login.html">Login here</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,34 +45,47 @@
 
 <body>
     <div class="register-container">
-        <h2 class="text-center mb-4">User Registration</h2>
-        <form action="backend/user-register.php" method="POST">
-            <div class="form-group">
-                <label for="username"><i class="fas fa-user"></i> Username:</label>
-                <input type="text" name="username" id="username" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="registerEmail"><i class="fas fa-envelope"></i> Email:</label>
-                <input type="email" name="email" id="registerEmail" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="registerPassword"><i class="fas fa-lock"></i> Password:</label>
-                <input type="password" name="password" id="registerPassword" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="confirmPassword"><i class="fas fa-lock"></i> Confirm Password:</label>
-                <input type="password" name="confirm_password" id="confirmPassword" class="form-control" required>
-            </div>
-            <button type="submit" class="btn btn-success">Register</button>
-        </form>
-        <div class="text-center mt-3">
-            <p>Already have an account? <a href="login.html">Login here</a></p>
+      <h2 class="text-center mb-4">User Registration</h2>
+      <form action="backend/user-register.php" method="POST" id="registrationForm">
+        <div class="form-group">
+          <label for="username"><i class="fas fa-user"></i> Username:</label>
+          <input type="text" name="username" id="username" class="form-control" required>
         </div>
+        <div class="form-group">
+          <label for="registerEmail"><i class="fas fa-envelope"></i> Email:</label>
+          <input type="email" name="email" id="registerEmail" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="registerPassword"><i class="fas fa-lock"></i> Password:</label>
+          <input type="password" name="password" id="registerPassword" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword"><i class="fas fa-lock"></i> Confirm Password:</label>
+          <input type="password" name="confirm_password" id="confirmPassword" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success" disabled>Register</button>
+      </form>
+      <div class="text-center mt-3">
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+      </div>
     </div>
-
+  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    <script>
+      const passwordInput = document.getElementById('registerPassword');
+      const confirmPasswordInput = document.getElementById('confirmPassword');
+      const registerButton = document.querySelector('#registrationForm button');
+  
+      confirmPasswordInput.addEventListener('keyup', () => {
+        if (passwordInput.value === confirmPasswordInput.value) {
+          registerButton.disabled = false;
+        } else {
+          registerButton.disabled = true;
+        }
+      });
+    </script>
+  </body>
 
-</html>
+</html> 
